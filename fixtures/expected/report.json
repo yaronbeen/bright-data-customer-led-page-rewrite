@@ -1,0 +1,397 @@
+{
+  "analysis_method": "deterministic_rules_v1",
+  "decision": "annotated_rewrite",
+  "draft_method": "approved_text_templates_v1",
+  "faq_edits": [
+    {
+      "audience_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "What do I need to get started?",
+          "source_id": "q1"
+        }
+      ],
+      "before_refs": [
+        {
+          "block_id": "b0002",
+          "quote": "Bring your existing work into Harbor.",
+          "source_id": "landing"
+        }
+      ],
+      "draft": "Start with a CSV file; no browser extension is required.",
+      "draft_state": "approved_text_ready",
+      "fact_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "Start with a CSV file; no browser extension is required.",
+          "source_id": "fact_note"
+        }
+      ],
+      "page_answer_refs": [],
+      "page_answer_state": "no_matching_answer_in_selected_section",
+      "proof_needed": [],
+      "question": "What do I need to get started?",
+      "question_origin": "observed",
+      "rationale": "Observed language is linked to the selected section; only approved product facts may supply the draft.",
+      "related_copy_refs": [],
+      "section_action": "review_existing_section",
+      "target_heading": "Setup",
+      "topic_id": "setup",
+      "verbatim_quotes": [
+        "What do I need to get started?"
+      ]
+    },
+    {
+      "audience_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "Does it guarantee more sales?",
+          "source_id": "q2"
+        }
+      ],
+      "before_refs": [
+        {
+          "block_id": "b0004",
+          "quote": "Designed for small teams.",
+          "source_id": "landing"
+        }
+      ],
+      "draft": null,
+      "draft_state": "needs_approved_fact",
+      "fact_refs": [],
+      "page_answer_refs": [],
+      "page_answer_state": "no_matching_answer_in_selected_section",
+      "proof_needed": [
+        "Approve a product fact before answering: Does it guarantee more sales?"
+      ],
+      "question": "Does it guarantee more sales?",
+      "question_origin": "observed",
+      "rationale": "Observed language is linked to the selected section; only approved product facts may supply the draft.",
+      "related_copy_refs": [],
+      "section_action": "review_existing_section",
+      "target_heading": "Results",
+      "topic_id": "sales",
+      "verbatim_quotes": [
+        "Does it guarantee more sales?"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "audience_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "What do I need to get started?",
+          "source_id": "q1"
+        }
+      ],
+      "before_refs": [
+        {
+          "block_id": "b0002",
+          "quote": "Bring your existing work into Harbor.",
+          "source_id": "landing"
+        }
+      ],
+      "draft": "Start with a CSV file; no browser extension is required.",
+      "draft_state": "approved_text_ready",
+      "fact_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "Start with a CSV file; no browser extension is required.",
+          "source_id": "fact_note"
+        }
+      ],
+      "page_answer_refs": [],
+      "page_answer_state": "no_matching_answer_in_selected_section",
+      "proof_needed": [],
+      "question": "What do I need to get started?",
+      "question_origin": "observed",
+      "rationale": "Observed language is linked to the selected section; only approved product facts may supply the draft.",
+      "related_copy_refs": [],
+      "section_action": "review_existing_section",
+      "target_heading": "Setup",
+      "topic_id": "setup",
+      "verbatim_quotes": [
+        "What do I need to get started?"
+      ]
+    },
+    {
+      "audience_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "Does it guarantee more sales?",
+          "source_id": "q2"
+        }
+      ],
+      "before_refs": [
+        {
+          "block_id": "b0004",
+          "quote": "Designed for small teams.",
+          "source_id": "landing"
+        }
+      ],
+      "draft": null,
+      "draft_state": "needs_approved_fact",
+      "fact_refs": [],
+      "page_answer_refs": [],
+      "page_answer_state": "no_matching_answer_in_selected_section",
+      "proof_needed": [
+        "Approve a product fact before answering: Does it guarantee more sales?"
+      ],
+      "question": "Does it guarantee more sales?",
+      "question_origin": "observed",
+      "rationale": "Observed language is linked to the selected section; only approved product facts may supply the draft.",
+      "related_copy_refs": [],
+      "section_action": "review_existing_section",
+      "target_heading": "Results",
+      "topic_id": "sales",
+      "verbatim_quotes": [
+        "Does it guarantee more sales?"
+      ]
+    }
+  ],
+  "headline_alternatives": [
+    {
+      "audience_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "What do I need to get started?",
+          "source_id": "q1"
+        }
+      ],
+      "fact_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "Start with a CSV file; no browser extension is required.",
+          "source_id": "fact_note"
+        }
+      ],
+      "state": "approved_text_template",
+      "text": "Harbor: Start with a CSV file; no browser extension is required.",
+      "topic_id": "setup"
+    },
+    {
+      "audience_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "What do I need to get started?",
+          "source_id": "q1"
+        }
+      ],
+      "fact_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "Start with a CSV file; no browser extension is required.",
+          "source_id": "fact_note"
+        }
+      ],
+      "state": "approved_text_template",
+      "text": "What do I need to get started? Start with a CSV file; no browser extension is required.",
+      "topic_id": "setup"
+    }
+  ],
+  "headlines": [
+    {
+      "audience_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "What do I need to get started?",
+          "source_id": "q1"
+        }
+      ],
+      "fact_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "Start with a CSV file; no browser extension is required.",
+          "source_id": "fact_note"
+        }
+      ],
+      "state": "approved_text_template",
+      "text": "Harbor: Start with a CSV file; no browser extension is required.",
+      "topic_id": "setup"
+    },
+    {
+      "audience_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "What do I need to get started?",
+          "source_id": "q1"
+        }
+      ],
+      "fact_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "Start with a CSV file; no browser extension is required.",
+          "source_id": "fact_note"
+        }
+      ],
+      "state": "approved_text_template",
+      "text": "What do I need to get started? Start with a CSV file; no browser extension is required.",
+      "topic_id": "setup"
+    }
+  ],
+  "project": "customer-led-page-rewrite",
+  "proof_needed": [
+    "Approve a product fact before answering: Does it guarantee more sales?"
+  ],
+  "question_map": [
+    {
+      "audience_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "What do I need to get started?",
+          "source_id": "q1"
+        }
+      ],
+      "before_refs": [
+        {
+          "block_id": "b0002",
+          "quote": "Bring your existing work into Harbor.",
+          "source_id": "landing"
+        }
+      ],
+      "draft": "Start with a CSV file; no browser extension is required.",
+      "draft_state": "approved_text_ready",
+      "fact_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "Start with a CSV file; no browser extension is required.",
+          "source_id": "fact_note"
+        }
+      ],
+      "page_answer_refs": [],
+      "page_answer_state": "no_matching_answer_in_selected_section",
+      "proof_needed": [],
+      "question": "What do I need to get started?",
+      "question_origin": "observed",
+      "related_copy_refs": [],
+      "section_action": "review_existing_section",
+      "target_heading": "Setup",
+      "topic_id": "setup",
+      "verbatim_quotes": [
+        "What do I need to get started?"
+      ]
+    },
+    {
+      "audience_refs": [
+        {
+          "block_id": "b0001",
+          "quote": "Does it guarantee more sales?",
+          "source_id": "q2"
+        }
+      ],
+      "before_refs": [
+        {
+          "block_id": "b0004",
+          "quote": "Designed for small teams.",
+          "source_id": "landing"
+        }
+      ],
+      "draft": null,
+      "draft_state": "needs_approved_fact",
+      "fact_refs": [],
+      "page_answer_refs": [],
+      "page_answer_state": "no_matching_answer_in_selected_section",
+      "proof_needed": [
+        "Approve a product fact before answering: Does it guarantee more sales?"
+      ],
+      "question": "Does it guarantee more sales?",
+      "question_origin": "observed",
+      "related_copy_refs": [],
+      "section_action": "review_existing_section",
+      "target_heading": "Results",
+      "topic_id": "sales",
+      "verbatim_quotes": [
+        "Does it guarantee more sales?"
+      ]
+    }
+  ],
+  "schema_version": "1.0",
+  "scope": {
+    "as_of": "2026-10-04T10:00:00Z",
+    "page_source_id": "landing",
+    "product": "Harbor",
+    "source_ids": [
+      "landing",
+      "q1",
+      "q2",
+      "fact_note"
+    ],
+    "source_roles": [
+      "landing_page",
+      "audience_language",
+      "audience_language",
+      "approved_product_fact"
+    ],
+    "topic_ids": [
+      "setup",
+      "sales"
+    ]
+  },
+  "source_index": [
+    {
+      "content_sha256": "388a67b4a99e0678e82ff810980ebf972a431dbc27ff2f0e41f8c5484965ef85",
+      "id": "landing",
+      "kind": "page",
+      "observed_at": "2026-10-04T10:00:00Z",
+      "provenance": "synthetic_fixture",
+      "provider_date": null,
+      "published_at": null,
+      "record_id": null,
+      "record_id_origin": "none",
+      "role": "landing_page",
+      "status": "collected",
+      "url": "https://example.com/harbor"
+    },
+    {
+      "content_sha256": "cfe3ef2804bd146424f54cb8861744d4cd44b32bbccf379249c56b95fea02703",
+      "id": "q1",
+      "kind": "review",
+      "observed_at": "2026-10-04T10:00:00Z",
+      "provenance": "synthetic_fixture",
+      "provider_date": null,
+      "published_at": null,
+      "record_id": "Q1",
+      "record_id_origin": "operator",
+      "role": "audience_language",
+      "status": "collected",
+      "url": "https://example.com/review/q1"
+    },
+    {
+      "content_sha256": "4800b529f4fdf2afab66e2f72694c35c32c3d73d376100d79cf3c77fa00feec5",
+      "id": "q2",
+      "kind": "question",
+      "observed_at": "2026-10-04T10:00:00Z",
+      "provenance": "synthetic_fixture",
+      "provider_date": null,
+      "published_at": null,
+      "record_id": "Q2",
+      "record_id_origin": "operator",
+      "role": "audience_language",
+      "status": "collected",
+      "url": "https://example.com/review/q2"
+    },
+    {
+      "content_sha256": "f5fbde6140530aa5d5df52903973d345f64ec9218850320ccf7f1684d374bd8e",
+      "id": "fact_note",
+      "kind": "operator_note",
+      "observed_at": "2026-10-04T10:00:00Z",
+      "provenance": "synthetic_fixture",
+      "provider_date": null,
+      "published_at": null,
+      "record_id": null,
+      "record_id_origin": "none",
+      "role": "approved_product_fact",
+      "status": "collected",
+      "url": null
+    }
+  ],
+  "status": "needs_review",
+  "summary": {
+    "faq_rows": 2,
+    "sources_analyzed": 4,
+    "sources_excluded": 0,
+    "topics_analyzed": 2
+  },
+  "warnings": []
+}

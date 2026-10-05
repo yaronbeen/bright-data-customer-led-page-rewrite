@@ -1,0 +1,6 @@
+row_type,topic_id,question_origin,target_heading,page_answer_state,before_excerpt,draft,draft_state,proof_needed,audience_source_ids,fact_source_ids,evidence_urls,provenance_state,contains_synthetic_data
+headline,setup,,,,,Harbor: Start with a CSV file; no browser extension is required.,approved_text_template,,q1,fact_note,https://example.com/review/q1,synthetic,true
+headline,setup,,,,,What do I need to get started? Start with a CSV file; no browser extension is required.,approved_text_template,,q1,fact_note,https://example.com/review/q1,synthetic,true
+faq,setup,observed,Setup,no_matching_answer_in_selected_section,Bring your existing work into Harbor.,Start with a CSV file; no browser extension is required.,approved_text_ready,,q1,fact_note,https://example.com/harbor;https://example.com/review/q1,synthetic,true
+faq,sales,observed,Results,no_matching_answer_in_selected_section,Designed for small teams.,,needs_approved_fact,Approve a product fact before answering: Does it guarantee more sales?,q2,,https://example.com/harbor;https://example.com/review/q2,synthetic,true
+proof_needed,,,,,,,,Approve a product fact before answering: Does it guarantee more sales?,,,,uncited,unknown
