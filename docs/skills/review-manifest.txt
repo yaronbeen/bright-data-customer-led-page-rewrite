@@ -1,0 +1,5 @@
+skills/proof-safe-copy-angles/SKILL.md
+docs/skills/proof-safe-copy-angles-example.md
+docs/skills/validation.md
+docs/skills/review-manifest.txt
+README.md
