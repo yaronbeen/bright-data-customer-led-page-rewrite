@@ -1,5 +1,19 @@
 # Learnings
 
+## Current Skills-Only Workflow - 2026-10-06
+
+- The user explicitly retired the Python product in favor of one simple Bright Data-backed business skill. Historical application decisions below are not current operating instructions.
+- Source evidence must be retrieved through configured Bright Data tools in the current agent session. Missing access means connect and stop, not use an export, mock, or another provider.
+- Product-page claims and user-approved facts can support bounded copy, but neither constitutes independent proof. Public reviews/questions guide framing, not product promises.
+- Two angles need different concerns or decision frames, not the same approved sentence with a question added. Insufficient support yields a held angle rather than padding.
+- Official MCP setup and tools documentation was fetched on 2026-10-06. `chub` was unavailable, so current official pages were read directly. Static documentation checks do not establish live functionality.
+
+- Independent real-data exercise: PASS for two distinct angles and FAQ proof holds, not performance. Historical public-language questions can guide framing but cannot establish a current capability gap; a partially supported answer should not acquire an unsupported related feature or benefit.
+- Exact capture instants/timezones can be unavailable. Preserve actual source dates and observation bounds without inventing precision. Public validation examples are not user business facts.
+- External evidence remains at `/home/yaron/.claude/data/brightdata-drafts/2026-10-06-brightdata-real-business-validation.md`. No source excerpts or validation dataset were copied into the repository, and no calls were repeated for the rule clarification.
+
+## Historical Application Learnings
+
 - The original fixture predated the final common envelope. Migrating it to `schema_version`, `project`, `observed_at`, status, and record identity fields allowed the undocumented legacy analysis/CLI bypass to be removed.
 - Exact question-origin attribution must compare the complete normalized question, including punctuation. A `match_any` hit supports observed language but never makes the operator-authored question verbatim.
 - Standalone ATX headings must split into their own blocks even when the following body line is not separated by a blank line; heading blocks cannot serve as answer evidence.

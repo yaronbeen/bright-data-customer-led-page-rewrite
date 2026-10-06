@@ -1,29 +1,26 @@
 # Customer-Led Page Rewrite
 
-Use selected public reviews and questions to draft two page angles grounded in product facts you've approved.
+Find the questions your page leaves unanswered, then draft two genuinely different ways to explain your product.
 
-Your agent uses [Bright Data](https://brightdata.com) to collect the page and public language, then the bundled skill prepares copy options for your editor.
+Your agent collects your product page and a small set of public reviews or questions through [Bright Data](https://brightdata.com). It uses those questions to shape the copy, but takes product claims only from your page or facts you've approved. Public opinions never become product promises.
 
 ## What You Get
 
-- Two reviewable angles: Question First and Fact First.
-- Exact source quotes connecting public questions to approved product facts.
-- A proof-needed list for claims that aren't ready to use.
+- Two distinct message angles, each with a headline, supporting copy, and source evidence.
+- Up to three FAQ suggestions addressing observed questions.
+- A proof-needed list for unsupported benefits or conflicting claims.
 
 ## Give This To Your Agent
 
 ```text
-For [product name], collect [product page URL] and up to 20 relevant public
-reviews/questions from [source URLs] using my configured Bright Data
-scraper or MCP. Use [approved product facts and supporting sources],
-then follow proof-safe-copy-angles to draft two page angles. Cite exact
-quotes, source URLs and dates; put unsupported claims in a proof-needed
-list. If collection is unavailable, ask me for a Bright Data export.
-Do not edit or publish the page.
+Use proof-safe-copy-angles for [product page URL] and [target audience].
+Collect the page and up to 20 relevant public reviews/questions from
+[source URLs] through my configured Bright Data tools. Use [optional
+approved product facts]. Draft two different message angles and useful
+FAQ suggestions. Cite quotes, source URLs, and capture times. Put any
+unsupported benefit in proof-needed. If Bright Data is not connected,
+ask me to connect it and stop. Do not edit or publish the page.
 ```
 
-Skill: [proof-safe-copy-angles](skills/proof-safe-copy-angles/SKILL.md).
-
-In the [checked example (invented data)](docs/skills/proof-safe-copy-angles-example.md), both angles use the approved CSV setup fact. A question about guaranteed sales stays on hold because no approved fact supports an answer.
-
-[Technical guide](docs/technical-guide.md)
+Read the [proof-safe-copy-angles skill](skills/proof-safe-copy-angles/SKILL.md).
+Connect your agent using the [official Bright Data MCP setup](https://docs.brightdata.com/products/mcp-server/remote/quickstart) or this [short connection guide](docs/technical-guide.md).
