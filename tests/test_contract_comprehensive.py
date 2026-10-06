@@ -1004,7 +1004,7 @@ def test_dev_lock_and_portable_readme_are_present():
     lock = (ROOT / "requirements-dev.lock").read_text()
     assert "pytest==9.0.2" in lock
     assert "setuptools==81.0.0" in lock
-    readme = (ROOT / "README.md").read_text()
+    readme = (ROOT / "docs" / "technical-guide.md").read_text()
     quickstart = readme.split("## Offline Quickstart", 1)[1].split("##", 1)[0]
     assert "/home/yaron/projects" not in quickstart
     assert "Differentiation is scope, not superiority" in readme

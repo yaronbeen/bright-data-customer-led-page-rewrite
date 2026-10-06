@@ -84,11 +84,12 @@ def test_readme_uses_neutral_workflow_language_and_truthful_template_sources():
     readme = (ROOT / "README.md").read_text()
     opening = "\n".join(readme.splitlines()[:16]).casefold()
     assert "page keeps dodging" not in opening
-    assert "customer-led is the workflow name" in opening
-    assert "does not establish customer identity or buying intent" in opening
-    assert "public-contributor language selected by an operator" in opening
-    assert "operator-supplied product and question text" in readme
-    assert "approved fact text" in readme
+    guide = (ROOT / "docs" / "technical-guide.md").read_text()
+    assert "customer-led is the workflow name" in guide.casefold()
+    assert "does not establish customer identity or buying intent" in guide.casefold()
+    assert "public-contributor language selected by an operator" in guide.casefold()
+    assert "operator-supplied product and question text" in guide
+    assert "approved fact text" in guide
 
 
 def test_generated_artifact_prominently_disclaims_customer_identity_and_template_inputs():
@@ -160,7 +161,7 @@ def test_web_unlocker_envelope_is_fail_closed_and_live_shape_remains_unverified(
     assert caught.value.receipt["sources"] == []
     assert len(calls) == 1
 
-    readme = (ROOT / "README.md").read_text()
+    readme = (ROOT / "docs" / "technical-guide.md").read_text()
     assert "conflicting response shapes" in readme
     assert "fail-closed" in readme
     assert "live compatibility is unverified" in readme
@@ -216,7 +217,7 @@ def test_named_scraper_adapters_use_current_pinned_dataset_ids(
 
 
 def test_readme_uses_current_scraper_names_ids_and_direct_docs_links():
-    readme = (ROOT / "README.md").read_text()
+    readme = (ROOT / "docs" / "technical-guide.md").read_text()
     assert "Amazon Reviews Scraper API" in readme
     assert "YouTube Comments Scraper API" in readme
     assert "`gd_le8e811kzy4ggddlq`" in readme
@@ -279,7 +280,7 @@ def test_uncited_csv_row_does_not_claim_absence_of_synthetic_data():
 
 
 def test_readme_explains_standalone_csv_provenance_columns():
-    readme = (ROOT / "README.md").read_text()
+    readme = (ROOT / "docs" / "technical-guide.md").read_text()
     assert "`provenance_state`" in readme
     assert "`contains_synthetic_data`" in readme
     assert "per row from only the cited source IDs" in readme
