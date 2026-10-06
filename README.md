@@ -177,7 +177,7 @@ python3 -m pip install -r requirements-dev.lock
 - Authorized real Web Unlocker/dataset smoke test: not performed.
 - Provider prices, account entitlement, actual cost, source completeness, and outcome lift: not verified or promised.
 - Independent review status: QA and Bright Data brand APPROVE on the 150-test review; security APPROVE on the final 154-test receipt-validation revision (user-reported). These reviews do not certify live provider behavior or account/billing status.
-- Public repository destination: `yaronbeen/bright-data-customer-led-page-rewrite`, per the approved project naming contract. No live Bright Data call is made for this release.
+- No live Bright Data call is made for this release.
 
 Safe error output is JSON. Invalid input/configuration exits 2, provider/transport failure exits 3, and pending/partial collection exits 4. Numeric `Retry-After` values up to 86,400 seconds are exposed as `retry_after_seconds`; provider messages and bodies are not. The client never retries automatically. Common local error codes include `invalid_input`, `invalid_manifest`, `approval_hash_mismatch`, `approval_replayed`, `approval_limit_exceeded`, `missing_api_key`, `rate_limited`, `provider_http_error`, `invalid_response`, `response_contract_mismatch`, `pending_snapshot`, and `provider_limit_exceeded`.
 
@@ -190,7 +190,7 @@ Provider request shapes were adapted from Bright Data documentation initially re
 - Amazon Scraper API overview: <https://docs.brightdata.com/products/scrapers/amazon/introduction>
 - YouTube Scraper API overview: <https://docs.brightdata.com/products/scrapers/youtube/introduction>
 
-Uses Bright Data for optional public-data retrieval. Analysis and decisions are local application logic.
+Uses [Bright Data](https://brightdata.com) for optional public-data retrieval. Analysis and decisions are local application logic.
 
 ## License
 
