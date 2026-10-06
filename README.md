@@ -14,6 +14,16 @@ Every edit cites its evidence. Only approved fact text is used. Unresolved claim
 - **Reviewable edits, not invented promises.** Two headline alternatives and up to three FAQ answer drafts built from approved fact text only; anything unsupported becomes a "proof needed" hold for a human.
 - **Artifacts for the whole run.** `report.json` carries the decision, question map, citations, source hashes, and warnings. `rewrite.md` is the reviewable brief with an evidence appendix. `rewrite.csv` is spreadsheet-safe, with per-row provenance flags.
 
+## Primary Workflow: Collect With Bright Data
+
+Bright Data is the collection engine for the intended workflow. Collect a selected public product page and the public reviews or video questions you want to examine, add product facts that a human has approved, then analyze the combined evidence. The CLI produces cited page gaps, headline alternatives, FAQ drafts, and proof-needed holds; it does not publish edits or turn public-contributor language into product claims.
+
+The implemented live routes are Bright Data REST APIs called by this CLI: Web Unlocker requests Markdown for one landing page, Amazon Reviews Scraper API uses dataset `gd_le8e811kzy4ggddlq`, and YouTube Comments Scraper API uses dataset `gd_lk9q0ew71spt1mxywf`. There is no Bright Data MCP adapter in this repository. Google Maps reviews can be imported from an already-authorized local export, but are not a live collection route here. See [collection setup and limits](#bright-data-retrieval-commands-approval-and-limits) for the manifest, approval, and exact fail-closed behavior.
+
+The live adapter is implemented but has not been verified with a real account. Web Unlocker documentation has conflicting response shapes; the adapter accepts direct UTF-8 Markdown only and fails closed on the documented JSON-envelope shape. Account access, entitlement, billing, page response compatibility, and returned data remain unverified. Scraper requests may return pending snapshots; the CLI never polls or retries automatically, and YouTube snapshot resume is unsupported.
+
+After collection, provide the generated library to `analyze` with `--sources FILE`. Add the product page and approved facts through the analysis input's `sources` list. Facts must have an approved-product-fact source and be marked approved. The analyzer only drafts from exact approved fact text and attaches citations to evidence-backed output.
+
 ## Offline Quickstart (Try It)
 
 Python 3.11+. No provider key, model key, account, or network required. Run from the repository root:
@@ -24,7 +34,7 @@ python3 -m customer_led_page_rewrite analyze fixtures/demo.json --out-dir /tmp/c
 python3 -m customer_led_page_rewrite analyze fixtures/demo.json --out-dir /tmp/customer-led-page-rewrite-check --dry-run
 ```
 
-One run writes `report.json`, `rewrite.md`, and `rewrite.csv`. The bundled demo uses an invented fixture, so the whole flow is inspectable offline. Existing artifacts are never overwritten unless you pass `--overwrite`; add a normalized collection library with `--sources FILE`.
+One run writes `report.json`, `rewrite.md`, and `rewrite.csv`. The bundled invented fixture is only a quick-start sample for inspecting the output offline; it is not the primary data-collection workflow. Existing artifacts are never overwritten unless you pass `--overwrite`; add a normalized collection library with `--sources FILE`.
 
 ## Install And Test
 
@@ -33,8 +43,6 @@ python3 -m pip install .
 customer-led-page-rewrite analyze fixtures/demo.json --out-dir /tmp/customer-led-page-rewrite-installed
 python3 -m pytest -q
 ```
-
-Bright Data integration is optional; the demo runs offline.
 
 ## Use The Collected Data
 
@@ -100,9 +108,9 @@ An analysis `--sources` library must be a complete version-1 collection library 
 
 Keep non-synthetic material under ignored private paths such as `private/collections/`, `private/approvals/`, `private/manifests/`, and `private/reports/`. The CLI discovers none of these automatically; pass every input path explicitly.
 
-## Optional Bright Data Retrieval
+## Bright Data Retrieval: Commands, Approval, And Limits
 
-Optional live mode uses Bright Data only to retrieve explicitly approved public targets. Analysis and decisions stay local. Live retrieval is **implemented but not verified against a real account**.
+Live mode uses Bright Data only to retrieve explicitly approved public targets. Analysis and decisions stay local. Live retrieval is **implemented but not verified against a real account**. The CLI makes REST API calls; it does not connect to Bright Data MCP.
 
 1. Create a bounded manifest containing at most one landing-page Web Unlocker request, one Amazon review batch, and one YouTube comment batch; maximum three calls and 50 requested review/comment records total.
 2. Run `customer-led-page-rewrite collect manifest.json --out /tmp/library.json --dry-run`. Dry-run validates scope and makes zero requests, even if credentials exist.
@@ -132,12 +140,14 @@ The approval JSON schema did not change. The Python boundaries did: direct calle
 
 `max_requests` covers every call in that invocation. `max_retained_records` covers the entire resulting collection library, including page sources already retained, pages this manifest can add, existing sources in a resume receipt, and the requested upper bound for review/comment records. The upper bound must fit before approval consumption or any paid request, and the limit is checked again before append.
 
-Allowed live products and pinned routes:
+Allowed live products and pinned REST routes:
 
 - Web Unlocker API: `POST https://api.brightdata.com/request`, requesting `format: raw` and `data_format: markdown`.
 - Amazon Reviews Scraper API adapter: dataset ID `gd_le8e811kzy4ggddlq`.
 - YouTube Comments Scraper API adapter: dataset ID `gd_lk9q0ew71spt1mxywf`.
 - Google Maps reviews are import-only in version 1.
+
+The offline `import-provider` command also accepts an already-authorized Markdown page export or JSON exports for Amazon reviews, YouTube comments, and Google Maps reviews. This normalizes files locally and makes zero Bright Data requests; it does not prove the export came from Bright Data.
 
 ### Web Unlocker Response Contract
 
@@ -190,7 +200,7 @@ Provider request shapes were adapted from Bright Data documentation initially re
 - Amazon Scraper API overview: <https://docs.brightdata.com/products/scrapers/amazon/introduction>
 - YouTube Scraper API overview: <https://docs.brightdata.com/products/scrapers/youtube/introduction>
 
-Uses [Bright Data](https://brightdata.com) for optional public-data retrieval. Analysis and decisions are local application logic.
+Uses [Bright Data](https://brightdata.com) as the primary intended public-data collection engine through the implemented REST API routes above. Analysis and decisions are local application logic.
 
 ## License
 
