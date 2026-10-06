@@ -29,7 +29,7 @@ from customer_led_page_rewrite.export import render_csv, render_markdown
 
 
 NOW = "2026-10-05T00:00:00Z"
-EXPIRY = "2026-10-06T00:00:00Z"
+EXPIRY = "2035-01-01T00:00:00Z"
 WEB_URL = "https://www.brightdata.com/"
 VIDEO_URL = "https://www.youtube.com/watch?v=abcdefghijk"
 
