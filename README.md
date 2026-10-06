@@ -1,48 +1,40 @@
 # Bright Data Customer-Led Page Rewrite
 
-Turn operator-selected public-contributor language into an evidence-linked page review without inventing product claims.
+Your landing page answers the questions you wish customers asked. It ignores the ones they actually ask.
 
-GitHub repository: [yaronbeen/bright-data-customer-led-page-rewrite](https://github.com/yaronbeen/bright-data-customer-led-page-rewrite). This is an independent showcase of optional Bright Data integration; the descriptive `bright-data-` repository prefix does not imply affiliation with or endorsement by Bright Data.
+Those are the questions that decide the sale. Feed this CLI three things — your page snapshot, the public reviews, comments, or questions you select, and the product facts you've approved — and it returns the buying questions your page never answers, two headline alternatives, FAQ drafts, and explicit "proof needed" holds.
 
-**Customer-Led is the workflow name. It does not establish customer identity or buying intent.** The tool works with public-contributor language selected by an operator; those contributors are not assumed to be customers, buyers, representative, or truthful.
+Every edit cites its evidence. Only approved fact text is used. Unresolved claims become proof-needed tasks instead of invented promises.
 
-This offline-first CLI links selected public question language to one landing-page section. Its deterministic headline templates combine operator-supplied product and question text with approved fact text; FAQ answer drafts use approved fact text only. It is an evidence workbench, not an LLM copywriter, a page editor, or a conversion predictor.
+*Customer-Led is the workflow name: the tool works with public-contributor language selected by an operator and does not establish customer identity or buying intent.*
 
-> **Synthetic example:** an invented public-contributor source contains “What do I need to get started?” The operator selects that language and the `Setup` section, which currently says “Bring your existing work into Harbor.” An approved product note supports the suggested FAQ answer: “Start with a CSV file; no browser extension is required.” A second selected question about guaranteed sales remains unresolved because no approved fact supports it.
+## What You Get
 
-## What It Produces
+- **A cited gap list.** Every selected question is matched against your chosen page section with exact quotes and source citations, so you see what your page says, what it never addresses, and which evidence backs each finding.
+- **Reviewable edits, not invented promises.** Two headline alternatives and up to three FAQ answer drafts built from approved fact text only; anything unsupported becomes a "proof needed" hold for a human.
+- **Artifacts for the whole run.** `report.json` carries the decision, question map, citations, source hashes, and warnings. `rewrite.md` is the reviewable brief with an evidence appendix. `rewrite.csv` is spreadsheet-safe, with per-row provenance flags.
 
-One run writes:
+## Offline Quickstart (Try It)
 
-- `report.json`: structured decision, question map, exact citations, source hashes, unknowns, and warnings.
-- `rewrite.md`: a reviewable rewrite brief with two conservative headline templates, up to three FAQ edits, proof tasks, and an evidence appendix.
-- `rewrite.csv`: fixed-column rows for headlines, FAQs, and proof tasks, with spreadsheet-formula protection and `provenance_state` plus `contains_synthetic_data` columns derived per row from only the cited source IDs. Detached CSV rows therefore preserve synthetic/mixed provenance disclosure without relying on the Markdown banner.
-
-CSV provenance values are `synthetic`, `non_synthetic`, `mixed`, `unknown`, or `uncited`; `contains_synthetic_data` is `true`, `false`, or `unknown`. Uncited rows use `contains_synthetic_data=unknown`: without evidence citations, the export cannot establish either the presence or absence of synthetic data. `false` means the row has citations and none are synthetic.
-
-The demo headline is composed from the product name plus approved text. It is not a promise that the wording is original, persuasive, or likely to improve conversion.
-
-## Offline Quickstart
-
-Python 3.11+ is required. No provider key, model key, account, or network is needed.
+Python 3.11+. No provider key, model key, account, or network required. Run from the repository root:
 
 ```bash
-# From the repository root:
 python3 -m pip install -r requirements-dev.lock
 python3 -m customer_led_page_rewrite analyze fixtures/demo.json --out-dir /tmp/customer-led-page-rewrite-demo
 python3 -m customer_led_page_rewrite analyze fixtures/demo.json --out-dir /tmp/customer-led-page-rewrite-check --dry-run
 ```
 
-Installed CLI:
+One run writes `report.json`, `rewrite.md`, and `rewrite.csv`. The bundled demo uses an invented fixture, so the whole flow is inspectable offline. Existing artifacts are never overwritten unless you pass `--overwrite`; add a normalized collection library with `--sources FILE`.
+
+## Install And Test
 
 ```bash
 python3 -m pip install .
 customer-led-page-rewrite analyze fixtures/demo.json --out-dir /tmp/customer-led-page-rewrite-installed
+python3 -m pytest -q
 ```
 
-Existing artifacts are never overwritten unless `--overwrite` is supplied. Add an explicit normalized collection library with `--sources FILE`; duplicate source IDs are rejected.
-
-The invented fixture and byte-stable expected artifacts are in `fixtures/`.
+Bright Data integration is optional; the demo runs offline.
 
 ## Use The Collected Data
 
@@ -60,6 +52,10 @@ call APIs, edit the page, or publish anything.
 **Invented fixture example:** Fact First uses "Harbor: Start with a CSV file; no browser extension is required." Question First leads with "What do I need to get started?" Both retain `fact_note/b0001`; the sales-guarantee question stays `needs_approved_fact`. These are editorial options, not conversion predictions or verified customer demand.
 
 See the [checked example](docs/skills/proof-safe-copy-angles-example.md), [actual offline validation](docs/skills/validation.md), and [review file manifest](docs/skills/review-manifest.txt). No new service, dependency, model, key, or configuration is added. The skill preserves citations, synthetic/mixed provenance, unknowns and warnings; real excerpts still need human privacy/rights review. No messages or page changes are made.
+
+## Output Details
+
+`rewrite.csv` carries `provenance_state` and `contains_synthetic_data` columns computed per row from only the cited source IDs, so detached rows keep their provenance disclosure. `provenance_state` is `synthetic`, `non_synthetic`, `mixed`, `unknown`, or `uncited`. Uncited rows use `contains_synthetic_data=unknown`: without citations, the export cannot establish either the presence or absence of synthetic data; `false` means the row has citations and none are synthetic.
 
 ## Decision Rules
 
@@ -194,7 +190,7 @@ Provider request shapes were adapted from Bright Data documentation initially re
 - Amazon Scraper API overview: <https://docs.brightdata.com/products/scrapers/amazon/introduction>
 - YouTube Scraper API overview: <https://docs.brightdata.com/products/scrapers/youtube/introduction>
 
-Uses Bright Data for optional public-data retrieval. Analysis and decisions are local application logic. Not affiliated with or endorsed by Bright Data.
+Uses Bright Data for optional public-data retrieval. Analysis and decisions are local application logic.
 
 ## License
 
